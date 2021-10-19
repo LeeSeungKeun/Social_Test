@@ -27,7 +27,7 @@ class LoginSelectViewController: UIViewController {
     }
 
     @IBAction func kakaoLoginAction(_ sender: UIButton) {
-
+        
     }
     @IBAction func appleLoginAction(_ sender: UIButton) {
 

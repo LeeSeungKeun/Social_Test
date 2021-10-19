@@ -19,6 +19,7 @@
 		6649C80B271D97820067DCC5 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6649C80A271D97820067DCC5 /* EmailLoginViewController.swift */; };
 		6649C810271D978F0067DCC5 /* LoginSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6649C80F271D978F0067DCC5 /* LoginSelectViewController.swift */; };
 		6649C819271D9A7D0067DCC5 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6649C818271D9A7D0067DCC5 /* UIColor.swift */; };
+		6649C82D271F11780067DCC5 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6649C82C271F11780067DCC5 /* LoginService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		6649C80A271D97820067DCC5 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
 		6649C80F271D978F0067DCC5 /* LoginSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSelectViewController.swift; sourceTree = "<group>"; };
 		6649C818271D9A7D0067DCC5 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		6649C82C271F11780067DCC5 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		6649C7BE271C526D0067DCC5 /* SocialLoginTest */ = {
 			isa = PBXGroup;
 			children = (
+				6649C81D271F10310067DCC5 /* Service */,
 				6649C817271D9A6B0067DCC5 /* Extension */,
 				6649C7F5271C528F0067DCC5 /* VC */,
 				6649C7BF271C526D0067DCC5 /* AppDelegate.swift */,
@@ -154,6 +157,14 @@
 				6649C818271D9A7D0067DCC5 /* UIColor.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		6649C81D271F10310067DCC5 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				6649C82C271F11780067DCC5 /* LoginService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,6 +304,7 @@
 				6649C800271C52C10067DCC5 /* MyViewController.swift in Sources */,
 				6649C80B271D97820067DCC5 /* EmailLoginViewController.swift in Sources */,
 				6649C7C2271C526D0067DCC5 /* SceneDelegate.swift in Sources */,
+				6649C82D271F11780067DCC5 /* LoginService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

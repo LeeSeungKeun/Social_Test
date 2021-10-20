@@ -6,7 +6,9 @@
 //
 
 import Foundation
-
+import KakaoSDKUser
+import KakaoSDKCommon
+import KakaoSDKAuth
 
 protocol LoginServiceProtocl {
     func requestFirebaseLogin(email : String , password : String , compleation : @escaping (Result<String, Error>) ->() )
@@ -15,7 +17,7 @@ protocol LoginServiceProtocl {
 
     func requestAppleLogin(email : String , password : String , compleation : @escaping (Result<String, Error>) ->() )
 
-    func requestKaKaoLogin(email : String , password : String , compleation : @escaping (Result<String, Error>) ->() )
+    func requestKaKaoLogin(email : String , password : String , compleation : @escaping (Result<OAuthToken, Error>) ->() )
 }
 
 enum MyError : Error {
@@ -39,7 +41,19 @@ class LoginService : LoginServiceProtocl{
 
     }
 
-    func requestKaKaoLogin(email : String , password : String , compleation : @escaping (Result<String, Error>) ->() ) {
+    func requestKaKaoLogin(email : String , password : String , compleation : @escaping (Result<OAuthToken, Error>) ->() ) {
+        // kakoTalk 로그인!
+        if (UserApi.isKakaoTalkLoginAvailable()) {
+            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+                if let error = error {
+                    print(error)
+                }
+                else {
+                    print("loginWithKakaoTalk() success.")
+                    guard let token = oauthToken else {return}
 
+                }
+            }
+        }
     }
 }

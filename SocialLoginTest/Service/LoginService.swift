@@ -9,6 +9,7 @@ import Foundation
 import KakaoSDKUser
 import KakaoSDKCommon
 import KakaoSDKAuth
+import FirebaseAuth
 
 protocol LoginServiceProtocl {
     func requestFirebaseLogin(email : String , password : String , compleation : @escaping (Result<String, Error>) ->() )
@@ -31,7 +32,14 @@ class LoginService : LoginServiceProtocl{
     private init(){}
 
     func requestFirebaseLogin(email : String , password : String , compleation : @escaping (Result<String, Error>) ->() ) {
-
+        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+            if let error = error {
+                compleation(.failure(error))
+            }
+            if let user = result {
+                compleation(.success(user.user.uid))
+            }
+        }
     }
     func requestGoogleLogin(email : String , password : String , compleation : @escaping (Result<String, Error>) ->() ) {
 

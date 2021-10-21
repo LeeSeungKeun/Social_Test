@@ -9,12 +9,14 @@ import UIKit
 import FirebaseAuth
 import KakaoSDKCommon
 import KakaoSDKAuth
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     private let kakaoKey = "835ab714b72088b4c7a66b038d948423"
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FirebaseApp.configure()
         KakaoSDKCommon.initSDK(appKey: kakaoKey)
         return true
     }

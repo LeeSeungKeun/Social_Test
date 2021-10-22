@@ -34,6 +34,15 @@ class LoginSelectViewController: UIViewController {
     }
 
     @IBAction func googleLoginAction(_ sender: UIButton) {
-
+        LoginService.sheard.requestKaKaoLogin { (result) in
+            switch result {
+            case .success(let token):
+                print("SUCESS")
+                // 성공여부
+            case .failure(let error):
+                print("ERROR" , error.localizedDescription)
+                // error
+            }
+        }
     }
 }

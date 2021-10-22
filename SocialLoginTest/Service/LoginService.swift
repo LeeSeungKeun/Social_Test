@@ -18,7 +18,7 @@ protocol LoginServiceProtocl {
 
     func requestAppleLogin(email : String , password : String , compleation : @escaping (Result<String, Error>) ->() )
 
-    func requestKaKaoLogin(email : String , password : String , compleation : @escaping (Result<OAuthToken, Error>) ->() )
+    func requestKaKaoLogin(compleation : @escaping (Result<OAuthToken, Error>) ->() )
 }
 
 enum MyError : Error {
@@ -49,17 +49,17 @@ class LoginService : LoginServiceProtocl{
 
     }
 
-    func requestKaKaoLogin(email : String , password : String , compleation : @escaping (Result<OAuthToken, Error>) ->() ) {
+    func requestKaKaoLogin(compleation : @escaping (Result<OAuthToken, Error>) ->() ) {
         // kakoTalk 로그인!
-        if (UserApi.isKakaoTalkLoginAvailable()) {
+        if (UserApi.isKakaoTalkLoginAvailable()) { // 카카오톡 다운로드 여부
             UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
                 if let error = error {
                     print(error)
                 }
                 else {
-                    print("loginWithKakaoTalk() success.")
+                    print("loginWithKakaoTalk success.")
                     guard let token = oauthToken else {return}
-
+                    compleation(.success(token))
                 }
             }
         }

@@ -331,6 +331,7 @@ PODS:
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Firestore
+  - GoogleSignIn
   - GoogleSignIn (~> 5.0.2)
   - KakaoSDKAuth
   - KakaoSDKCommon
@@ -385,6 +386,6 @@ SPEC CHECKSUMS:
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
 
-PODFILE CHECKSUM: 62855410b3af7870eddd01fe639431e864487bc4
+PODFILE CHECKSUM: 421052420b77d26546720e76d910a08a38b1d3ad
 
 COCOAPODS: 1.10.1

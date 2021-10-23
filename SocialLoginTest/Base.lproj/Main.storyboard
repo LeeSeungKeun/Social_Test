@@ -215,7 +215,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="cW2-66-CJE"/>
                     <connections>
+                        <outlet property="emailTextField" destination="yQD-VA-d5h" id="fAZ-QM-gtq"/>
                         <outlet property="loginButton" destination="3TU-wg-3O2" id="XtH-og-B7f"/>
+                        <outlet property="passwordTextField" destination="npp-di-B9l" id="t4F-gf-Mhi"/>
                         <outlet property="signUpButton" destination="fsq-tn-mag" id="zQp-Ga-DuY"/>
                     </connections>
                 </viewController>

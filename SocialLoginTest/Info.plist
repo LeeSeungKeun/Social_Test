@@ -24,6 +24,7 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>kakao835ab714b72088b4c7a66b038d948423</string>
+                <string>com.googleusercontent.apps</string>
 			</array>
 		</dict>
 	</array>

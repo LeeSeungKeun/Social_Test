@@ -9,6 +9,8 @@ import UIKit
 
 class EmailLoginViewController: UIViewController {
 
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
 
@@ -23,6 +25,20 @@ class EmailLoginViewController: UIViewController {
         }
     }
 
+    @IBAction func loginActoin(_ : UIButton) {
+        let email = emailTextField.text ?? ""
+        let pwd = passwordTextField.text ?? ""
+
+        // email Login Actoin
+        LoginService.sheard.requestFirebaseLogin(email: email, password: pwd) { result in
+            switch result {
+            case .success(let uid):
+                print("uid login scueess")
+            case .failure(let error):
+                print("error : " , error.localizedDescription)
+            }
+        }
+    }
     
 
 }

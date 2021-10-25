@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4F127DFEE8AEE872416F0C68 /* Pods_SocialLoginTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A73FB15FAFED7A76E21FD660 /* Pods_SocialLoginTestTests.framework */; };
+		660AA5662726F21200CFF670 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660AA5652726F21200CFF670 /* SignUpViewController.swift */; };
+		660AA56B2726F28000CFF670 /* VC+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660AA56A2726F28000CFF670 /* VC+Keyboard.swift */; };
 		6649C7C0271C526D0067DCC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6649C7BF271C526D0067DCC5 /* AppDelegate.swift */; };
 		6649C7C2271C526D0067DCC5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6649C7C1271C526D0067DCC5 /* SceneDelegate.swift */; };
 		6649C7C7271C526D0067DCC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6649C7C5271C526D0067DCC5 /* Main.storyboard */; };
@@ -46,6 +48,8 @@
 
 /* Begin PBXFileReference section */
 		4D704D71B5C0ED000BF5099C /* Pods_SocialLoginTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialLoginTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		660AA5652726F21200CFF670 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		660AA56A2726F28000CFF670 /* VC+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC+Keyboard.swift"; sourceTree = "<group>"; };
 		6649C7BC271C526D0067DCC5 /* SocialLoginTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialLoginTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6649C7BF271C526D0067DCC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6649C7C1271C526D0067DCC5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -192,6 +196,7 @@
 				6649C7FF271C52C10067DCC5 /* MyViewController.swift */,
 				6649C80A271D97820067DCC5 /* EmailLoginViewController.swift */,
 				6649C80F271D978F0067DCC5 /* LoginSelectViewController.swift */,
+				660AA5652726F21200CFF670 /* SignUpViewController.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -200,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				6649C818271D9A7D0067DCC5 /* UIColor.swift */,
+				660AA56A2726F28000CFF670 /* VC+Keyboard.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -489,9 +495,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6649C810271D978F0067DCC5 /* LoginSelectViewController.swift in Sources */,
+				660AA56B2726F28000CFF670 /* VC+Keyboard.swift in Sources */,
 				6649C819271D9A7D0067DCC5 /* UIColor.swift in Sources */,
 				6649C7CA271C526D0067DCC5 /* SocialLoginTest.xcdatamodeld in Sources */,
 				66F03AA02721A46F00FC902E /* UserService.swift in Sources */,
+				660AA5662726F21200CFF670 /* SignUpViewController.swift in Sources */,
 				6649C7C0271C526D0067DCC5 /* AppDelegate.swift in Sources */,
 				6649C800271C52C10067DCC5 /* MyViewController.swift in Sources */,
 				6649C80B271D97820067DCC5 /* EmailLoginViewController.swift in Sources */,

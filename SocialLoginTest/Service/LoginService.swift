@@ -14,8 +14,6 @@ import FirebaseAuth
 protocol LoginServiceProtocl {
     func requestFirebaseLogin(email : String , password : String , compleation : @escaping (Result<String, Error>) ->() )
 
-    func requestGoogleLogin(email : String , password : String , compleation : @escaping (Result<String, Error>) ->() )
-
     func requestAppleLogin(email : String , password : String , compleation : @escaping (Result<String, Error>) ->() )
 
     func requestKaKaoLogin(compleation : @escaping (Result<OAuthToken, Error>) ->() )
@@ -40,9 +38,6 @@ class LoginService : LoginServiceProtocl{
                 compleation(.success(user.user.uid))
             }
         }
-    }
-    func requestGoogleLogin(email : String , password : String , compleation : @escaping (Result<String, Error>) ->() ) {
-
     }
 
     func requestAppleLogin(email : String , password : String , compleation : @escaping (Result<String, Error>) ->() ) {

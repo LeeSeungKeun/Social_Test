@@ -24,7 +24,14 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>kakao835ab714b72088b4c7a66b038d948423</string>
-                <string>com.googleusercontent.apps</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.1015741152863-rfro6smuocbiq3ik8g790o0r6s9bs04v</string>
 			</array>
 		</dict>
 	</array>

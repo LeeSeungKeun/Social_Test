@@ -120,6 +120,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="2CH-Kc-Igq"/>
                     <connections>
+                        <outlet property="googleLoginButton" destination="I1O-UB-ggq" id="sh4-fs-cII"/>
                         <outletCollection property="loginButtons" destination="Z0z-vv-nJt" collectionClass="NSMutableArray" id="63a-2e-GEN"/>
                         <outletCollection property="loginButtons" destination="I1O-UB-ggq" collectionClass="NSMutableArray" id="yRD-gE-l82"/>
                         <outletCollection property="loginButtons" destination="s8F-Ns-dab" collectionClass="NSMutableArray" id="vOs-bd-gxc"/>
@@ -140,7 +141,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="lSU-MX-v7Y">
-                                <rect key="frame" x="50" y="385" width="275" height="125"/>
+                                <rect key="frame" x="50" y="385" width="275" height="164.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3TU-wg-3O2">
                                         <rect key="frame" x="0.0" y="0.0" width="275" height="55"/>
@@ -159,7 +160,16 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="NotoSansKannada-Bold" family="Noto Sans Kannada" pointSize="20"/>
                                         <state key="normal" title="회원가입"/>
+                                        <connections>
+                                            <segue destination="uVy-hh-R6K" kind="push" id="bQW-ro-dI3"/>
+                                        </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아이디가 없다면.... 회원가입 눌러요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Epl-0s-hfB">
+                                        <rect key="frame" x="0.0" y="140" width="275" height="24.5"/>
+                                        <fontDescription key="fontDescription" name="NotoSansKannada-Bold" family="Noto Sans Kannada" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="W31-Ny-vya">
@@ -224,6 +234,115 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sfj-gt-U7B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1697" y="72"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0qN-lS-1sO">
+            <objects>
+                <viewController id="uVy-hh-R6K" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="I5G-DI-Gbi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="XPJ-5l-al8">
+                                <rect key="frame" x="30" y="200" width="315" height="179.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="참가자 등록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYf-30-5f8">
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="39.5"/>
+                                        <fontDescription key="fontDescription" name="NotoSansKannada-Bold" family="Noto Sans Kannada" pointSize="29"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일을 입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WNb-8X-S3F">
+                                        <rect key="frame" x="0.0" y="69.5" width="315" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Vgz-tc-Axj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="패스워드 입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AWX-Gd-0cO">
+                                        <rect key="frame" x="0.0" y="139.5" width="315" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="bUb-vF-lKc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwY-Ni-MYD">
+                                <rect key="frame" x="50" y="567" width="275" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Lt6-Rq-osa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NotoSansKannada-Bold" family="Noto Sans Kannada" pointSize="24"/>
+                                <state key="normal" title="회원가입">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9xe-uP-AP0"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XPJ-5l-al8" firstAttribute="top" secondItem="9xe-uP-AP0" secondAttribute="top" constant="200" id="7Og-bo-fzL"/>
+                            <constraint firstItem="XPJ-5l-al8" firstAttribute="leading" secondItem="9xe-uP-AP0" secondAttribute="leading" constant="30" id="DT8-is-VJA"/>
+                            <constraint firstItem="9xe-uP-AP0" firstAttribute="trailing" secondItem="XPJ-5l-al8" secondAttribute="trailing" constant="30" id="GOo-on-pad"/>
+                            <constraint firstItem="9xe-uP-AP0" firstAttribute="trailing" secondItem="kwY-Ni-MYD" secondAttribute="trailing" constant="50" id="RNK-hB-xE7"/>
+                            <constraint firstItem="9xe-uP-AP0" firstAttribute="bottom" secondItem="kwY-Ni-MYD" secondAttribute="bottom" constant="50" id="f49-Ry-peo"/>
+                            <constraint firstItem="kwY-Ni-MYD" firstAttribute="leading" secondItem="9xe-uP-AP0" secondAttribute="leading" constant="50" id="hrF-0t-IM2"/>
+                            <constraint firstItem="XPJ-5l-al8" firstAttribute="centerX" secondItem="9xe-uP-AP0" secondAttribute="centerX" id="pZl-71-JEP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Bst-qd-ohx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EBI-e5-TZq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1660" y="883"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cOj-gi-xzU">
+            <objects>
+                <viewController id="yew-pr-HrC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iZN-SH-bhW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="ID0-KV-p8V">
+                                <rect key="frame" x="30" y="323.5" width="315" height="293.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5Q-SW-ofX">
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="43.5"/>
+                                        <fontDescription key="fontDescription" name="NotoSansKannada-Bold" family="Noto Sans Kannada" pointSize="32"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OL0-rE-WV3">
+                                        <rect key="frame" x="0.0" y="243.5" width="315" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="wFP-9e-EJO"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NotoSansKannada-Bold" family="Noto Sans Kannada" pointSize="17"/>
+                                        <state key="normal" title="로그아웃">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Bxv-qn-4rh"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Bxv-qn-4rh" firstAttribute="bottom" secondItem="ID0-KV-p8V" secondAttribute="bottom" constant="50" id="rCB-z9-Df2"/>
+                            <constraint firstItem="ID0-KV-p8V" firstAttribute="leading" secondItem="Bxv-qn-4rh" secondAttribute="leading" constant="30" id="vJG-OB-CMj"/>
+                            <constraint firstItem="Bxv-qn-4rh" firstAttribute="trailing" secondItem="ID0-KV-p8V" secondAttribute="trailing" constant="30" id="zdR-vs-SNP"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3os-MP-szp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2740" y="50"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SUl-XD-Ra2">

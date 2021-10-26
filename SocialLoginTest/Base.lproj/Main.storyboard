@@ -235,10 +235,10 @@
             </objects>
             <point key="canvasLocation" x="1697" y="72"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="0qN-lS-1sO">
             <objects>
-                <viewController id="uVy-hh-R6K" sceneMemberID="viewController">
+                <viewController id="uVy-hh-R6K" customClass="SignUpViewController" customModule="SocialLoginTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I5G-DI-Gbi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -280,6 +280,9 @@
                                 <state key="normal" title="회원가입">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="signUpAction:" destination="uVy-hh-R6K" eventType="touchUpInside" id="j1j-M7-p2C"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9xe-uP-AP0"/>
@@ -295,6 +298,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Bst-qd-ohx"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="WNb-8X-S3F" id="OLe-hq-po7"/>
+                        <outlet property="passwordTextField" destination="AWX-Gd-0cO" id="FCf-RM-QvE"/>
+                        <outlet property="signUpButton" destination="kwY-Ni-MYD" id="lS5-Ms-1Wt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EBI-e5-TZq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -14,6 +14,8 @@ protocol UserServiceProtocl {
 }
 
 class UserService : UserServiceProtocl {
+    static let sheard = UserService()
+    private init(){}
     func requestSignUp(email: String, password: String, compleation: @escaping (Result<String, Error>) -> ()) {
         Auth.auth().createUser(withEmail: email, password: password) { (auth, error) in
             if let err = error {

@@ -41,7 +41,7 @@ class LoginService : LoginServiceProtocl{
     }
 
     func requestAppleLogin(email : String , password : String , compleation : @escaping (Result<String, Error>) ->() ) {
-
+        
     }
 
     func requestKaKaoLogin(compleation : @escaping (Result<OAuthToken, Error>) ->() ) {
@@ -55,6 +55,19 @@ class LoginService : LoginServiceProtocl{
                     print("loginWithKakaoTalk success.")
                     guard let token = oauthToken else {return}
                     compleation(.success(token))
+                }
+            }
+        }else {
+            // 아래는 시뮬레이터용 
+            UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+                if let error = error {
+                    print(error)
+                }
+                else {
+                    print("loginWithKakaoAccount() success.")
+
+                    //do something
+                    let _ = oauthToken
                 }
             }
         }

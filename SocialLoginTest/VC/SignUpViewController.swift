@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import AuthenticationServices
 
 class SignUpViewController: UIViewController {
     @IBOutlet var emailTextField : UITextField!

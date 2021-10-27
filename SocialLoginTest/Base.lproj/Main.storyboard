@@ -120,6 +120,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="2CH-Kc-Igq"/>
                     <connections>
+                        <outlet property="appleLoginButton" destination="s8F-Ns-dab" id="kdx-yw-j10"/>
                         <outlet property="googleLoginButton" destination="I1O-UB-ggq" id="sh4-fs-cII"/>
                         <outletCollection property="loginButtons" destination="Z0z-vv-nJt" collectionClass="NSMutableArray" id="63a-2e-GEN"/>
                         <outletCollection property="loginButtons" destination="I1O-UB-ggq" collectionClass="NSMutableArray" id="yRD-gE-l82"/>

@@ -142,7 +142,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="lSU-MX-v7Y">
-                                <rect key="frame" x="50" y="385" width="275" height="164.5"/>
+                                <rect key="frame" x="50" y="335" width="275" height="164.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3TU-wg-3O2">
                                         <rect key="frame" x="0.0" y="0.0" width="275" height="55"/>
@@ -152,6 +152,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="NotoSansKannada-Bold" family="Noto Sans Kannada" pointSize="20"/>
                                         <state key="normal" title="로그인"/>
+                                        <connections>
+                                            <action selector="loginActoin:" destination="opw-z4-3E4" eventType="touchUpInside" id="JoV-VW-8rQ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsq-tn-mag">
                                         <rect key="frame" x="0.0" y="70" width="275" height="55"/>
@@ -174,7 +177,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="W31-Ny-vya">
-                                <rect key="frame" x="30" y="100" width="315" height="225"/>
+                                <rect key="frame" x="30" y="50" width="315" height="225"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="참가자 이메일....." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q2f-bf-XoZ">
                                         <rect key="frame" x="0.0" y="0.0" width="315" height="32.5"/>
@@ -221,7 +224,7 @@
                             <constraint firstItem="gVd-ha-MeI" firstAttribute="trailing" secondItem="W31-Ny-vya" secondAttribute="trailing" constant="30" id="YPr-YN-jRx"/>
                             <constraint firstItem="lSU-MX-v7Y" firstAttribute="top" secondItem="W31-Ny-vya" secondAttribute="bottom" constant="60" id="dX8-dF-xfI"/>
                             <constraint firstItem="W31-Ny-vya" firstAttribute="leading" secondItem="gVd-ha-MeI" secondAttribute="leading" constant="30" id="zNV-GH-IbJ"/>
-                            <constraint firstItem="W31-Ny-vya" firstAttribute="top" secondItem="gVd-ha-MeI" secondAttribute="top" constant="100" id="zex-BC-mMk"/>
+                            <constraint firstItem="W31-Ny-vya" firstAttribute="top" secondItem="gVd-ha-MeI" secondAttribute="top" constant="50" id="zex-BC-mMk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cW2-66-CJE"/>
@@ -245,7 +248,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="XPJ-5l-al8">
-                                <rect key="frame" x="30" y="200" width="315" height="179.5"/>
+                                <rect key="frame" x="30" y="100" width="315" height="179.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="참가자 등록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYf-30-5f8">
                                         <rect key="frame" x="0.0" y="0.0" width="315" height="39.5"/>
@@ -255,18 +258,20 @@
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일을 입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WNb-8X-S3F">
                                         <rect key="frame" x="0.0" y="69.5" width="315" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Vgz-tc-Axj"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="NotoSansKannada-Bold" family="Noto Sans Kannada" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="패스워드 입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AWX-Gd-0cO">
                                         <rect key="frame" x="0.0" y="139.5" width="315" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="bUb-vF-lKc"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="NotoSansKannada-Bold" family="Noto Sans Kannada" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
@@ -289,7 +294,7 @@
                         <viewLayoutGuide key="safeArea" id="9xe-uP-AP0"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="XPJ-5l-al8" firstAttribute="top" secondItem="9xe-uP-AP0" secondAttribute="top" constant="200" id="7Og-bo-fzL"/>
+                            <constraint firstItem="XPJ-5l-al8" firstAttribute="top" secondItem="9xe-uP-AP0" secondAttribute="top" constant="100" id="7Og-bo-fzL"/>
                             <constraint firstItem="XPJ-5l-al8" firstAttribute="leading" secondItem="9xe-uP-AP0" secondAttribute="leading" constant="30" id="DT8-is-VJA"/>
                             <constraint firstItem="9xe-uP-AP0" firstAttribute="trailing" secondItem="XPJ-5l-al8" secondAttribute="trailing" constant="30" id="GOo-on-pad"/>
                             <constraint firstItem="9xe-uP-AP0" firstAttribute="trailing" secondItem="kwY-Ni-MYD" secondAttribute="trailing" constant="50" id="RNK-hB-xE7"/>
@@ -312,7 +317,7 @@
         <!--View Controller-->
         <scene sceneID="cOj-gi-xzU">
             <objects>
-                <viewController id="yew-pr-HrC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yew-pr-HrC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iZN-SH-bhW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

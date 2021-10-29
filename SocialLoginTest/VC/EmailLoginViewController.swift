@@ -34,6 +34,10 @@ class EmailLoginViewController: UIViewController {
             switch result {
             case .success(let uid):
                 print("uid login scueess")
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(identifier: "MyViewController")
+                self.navigationController?.pushViewController(vc, animated: true)
+                
             case .failure(let error):
                 print("error : " , error.localizedDescription)
             }

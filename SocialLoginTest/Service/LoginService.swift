@@ -10,6 +10,14 @@ import KakaoSDKUser
 import KakaoSDKCommon
 import KakaoSDKAuth
 import FirebaseAuth
+import Firebase
+
+enum MyError : Error {
+    case invalidEmail
+    case invalidPassword
+    case jsonEncodeError
+    case kakaoLoginError
+}
 
 protocol LoginServiceProtocl {
     func requestFirebaseLogin(email : String , password : String , compleation : @escaping (Result<String, Error>) ->() )
@@ -19,22 +27,21 @@ protocol LoginServiceProtocl {
     func requestKaKaoLogin(compleation : @escaping (Result<OAuthToken, Error>) ->() )
 }
 
-enum MyError : Error {
-    case invalidEmail
-    case invalidPassword
-    case jsonEncodeErro
-}
+
 
 class LoginService : LoginServiceProtocl{
     static let sheard = LoginService()
     private init(){}
 
     func requestFirebaseLogin(email : String , password : String , compleation : @escaping (Result<String, Error>) ->() ) {
+
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             if let error = error {
+                print(error.localizedDescription)
                 compleation(.failure(error))
             }
             if let user = result {
+                print("Success")
                 compleation(.success(user.user.uid))
             }
         }
@@ -49,7 +56,8 @@ class LoginService : LoginServiceProtocl{
         if (UserApi.isKakaoTalkLoginAvailable()) { // 카카오톡 다운로드 여부
             UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
                 if let error = error {
-                    print(error)
+                    print(error.localizedDescription)
+                    compleation(.failure(error))
                 }
                 else {
                     print("loginWithKakaoTalk success.")
@@ -58,16 +66,18 @@ class LoginService : LoginServiceProtocl{
                 }
             }
         }else {
-            // 아래는 시뮬레이터용 
+            // 아래는 시뮬레이터용
             UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
                 if let error = error {
-                    print(error)
+                    print(error.localizedDescription)
+                    compleation(.failure(error))
                 }
                 else {
                     print("loginWithKakaoAccount() success.")
-
-                    //do something
-                    let _ = oauthToken
+                    guard let token = oauthToken else {
+                        return
+                    }
+                    compleation(.success(token))
                 }
             }
         }

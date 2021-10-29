@@ -22,7 +22,8 @@ class SignUpViewController: UIViewController {
 
     //TODE -- 나중에 Rx로 변경시키자
     @IBAction func signUpAction(_ sender: Any) {
-        if emailTextField.text!.isValidPassword() && passwordTextField.text!.isValidPassword() {
+
+        if emailTextField.text!.isValidateEmail() && passwordTextField.text!.isValidPassword() {
             UserService.sheard.requestSignUp(email: emailTextField.text ?? "", password: passwordTextField.text ?? "") { (result)  in
                 switch result {
                 case .success(_):

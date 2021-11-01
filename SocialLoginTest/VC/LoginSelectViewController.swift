@@ -81,11 +81,11 @@ extension LoginSelectViewController : ASAuthorizationControllerDelegate {
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         guard let credential = authorization.credential as? ASAuthorizationAppleIDCredential else {return}
 
-//        guard let token = credential.identityToken else {return}
-//        guard let code = credential.authorizationCode else { return }
-//        guard let name = credential.fullName else {return}
-//        let user = credential.user
-//        let email = credential.email
+        guard let token = credential.identityToken else {return}
+        guard let code = credential.authorizationCode else { return }
+        guard let name = credential.fullName else {return}
+        let user = credential.user
+        let email = credential.email
 
     }
 
@@ -93,6 +93,7 @@ extension LoginSelectViewController : ASAuthorizationControllerDelegate {
         print("error -> \(error.localizedDescription)")
     }
 }
+
 
 extension LoginSelectViewController : ASAuthorizationControllerPresentationContextProviding {
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {

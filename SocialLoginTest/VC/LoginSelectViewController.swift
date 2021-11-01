@@ -43,10 +43,14 @@ class LoginSelectViewController: UIViewController {
         authorzationController.performRequests()
     }
 
-    @IBAction func emailLoginAction(_ sender: UIButton) {
+    private func pushMainView(identifier : String){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "EmailLoginViewController")
+        let vc = storyboard.instantiateViewController(identifier: identifier)
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+
+    @IBAction func emailLoginAction(_ sender: UIButton) {
+        pushMainView(identifier: "EmailLoginViewController")
     }
 
 
@@ -55,7 +59,7 @@ class LoginSelectViewController: UIViewController {
             switch result {
             case .success(let token):
                 print("SUCESS")
-                // 성공여부
+                self.pushMainView(identifier : "MyViewController")
             case .failure(let error):
                 print("ERROR" , error.localizedDescription)
                 // error
@@ -68,6 +72,7 @@ class LoginSelectViewController: UIViewController {
     }
 
     @IBAction func googleLoginAction(_ sender: UIButton) {
+        GIDSignIn.sharedInstance()?.signIn()
     }
 }
 

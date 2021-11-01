@@ -29,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate , GIDSignInDelegate {
         Auth.auth().signIn(with: credential) {
             if let error = $1 {
                 print("Error -> \(error.localizedDescription)")
+            }else {
+                self.showMainVC()
             }
             // 화면이동할 소스 추가
         }
@@ -70,6 +72,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate , GIDSignInDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
+    func showMainVC(){
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "MyViewController")
+        vc.modalPresentationStyle = .fullScreen
+        UIApplication.shared.windows.first?.rootViewController?.show(vc, sender: nil)
+    }
 
 }
 

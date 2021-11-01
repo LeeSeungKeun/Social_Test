@@ -31,7 +31,9 @@ class SignUpViewController: UIViewController {
                     self.navigationController?.popViewController(animated: true)
                 case .failure(let error):
                     // error
-                    print("error -> \(error.localizedDescription)")
+                    let code = (error as NSError).code
+                    print("error_code -> \(code)")
+                    print("error. -> \(error.localizedDescription)" )
                 }
             }
         }

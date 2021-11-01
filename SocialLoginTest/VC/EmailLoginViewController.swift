@@ -16,13 +16,19 @@ class EmailLoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "이메일 로그인!!!!"
-        self.navigationController?.isNavigationBarHidden = false
+        self.title = "이메일 로그인!"
+
+
         [signUpButton , loginButton].forEach {
             $0?.backgroundColor = UIColor.appColor(.buttonColor)
             $0?.layer.cornerRadius = 8
             $0?.setTitleColor(.white, for: .normal)
         }
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = false
     }
 
     @IBAction func loginActoin(_ : UIButton) {
